@@ -1,0 +1,222 @@
+.title-child1 {
+  height: 77px;
+  width: 375px;
+  position: relative;
+  background-color: var(--color-sandybrown);
+  display: none;
+  max-width: 100%;
+}
+.a3 {
+  text-decoration: none;
+  position: relative;
+  color: inherit;
+  cursor: pointer;
+  z-index: 1;
+}
+.title4,
+.title5 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  max-width: 100%;
+}
+.title5 {
+  flex: 1;
+  background-color: var(--color-sandybrown);
+  justify-content: center;
+  padding: var(--padding-13xl) var(--padding-xl) var(--padding-11xs)
+    var(--padding-2xl);
+  box-sizing: border-box;
+}
+.title4 {
+  align-self: stretch;
+  justify-content: flex-start;
+  cursor: pointer;
+  text-align: left;
+  font-size: var(--font-size-11xl);
+  color: var(--color-darkolivegreen);
+  font-family: var(--font-yomogi);
+}
+.content-child {
+  align-self: stretch;
+  height: 597px;
+  position: relative;
+  background-color: var(--color-palegoldenrod-100);
+  display: none;
+}
+.inner-content-child {
+  height: 50px;
+  width: 50px;
+  position: relative;
+  z-index: 1;
+}
+.inner-content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-12xs);
+}
+.image-placeholder {
+  border: 0;
+  background-color: #c5c5c5;
+  height: 327px;
+  width: auto;
+  outline: 0;
+  flex: 1;
+  position: relative;
+  max-width: 100%;
+  z-index: 1;
+}
+.image-placeholder-wrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 0 var(--padding-base);
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.comment-wrapper-child {
+  width: 351px;
+  height: 172px;
+  position: relative;
+  border-radius: var(--br-xl);
+  background-color: var(--background-default-default);
+  display: none;
+  max-width: 100%;
+  z-index: 0;
+}
+.icon1 {
+  width: 50px;
+  border-radius: 50%;
+  background-color: #d8d8d8;
+  cursor: pointer;
+}
+.icon1,
+.relic {
+  align-self: stretch;
+  position: relative;
+  z-index: 2;
+}
+.comment-header,
+.user-name {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.user-name {
+  flex-direction: column;
+  padding: var(--padding-5xs) 0 0;
+}
+.comment-header {
+  align-self: stretch;
+  flex-direction: row;
+  gap: var(--gap-mini);
+}
+.div5 {
+  position: relative;
+  line-height: 23px;
+  display: inline-block;
+  min-width: 123px;
+  z-index: 2;
+}
+.comment-box,
+.comment-content,
+.container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.container {
+  flex-direction: row;
+  padding: 0 var(--padding-9xs);
+  font-size: var(--body-base-size);
+  font-family: var(--body-base);
+}
+.comment-box,
+.comment-content {
+  align-self: stretch;
+}
+.comment-content {
+  width: 177px;
+  flex-direction: column;
+  gap: var(--gap-3xs);
+}
+.comment-box {
+  flex: 1;
+  flex-direction: row;
+}
+.iine-icon {
+  width: 29px;
+  height: 29px;
+  position: relative;
+  z-index: 2;
+}
+.share-icon {
+  width: 21.8px;
+  height: 23.5px;
+  position: absolute;
+  margin: 0 !important;
+  right: 9.6px;
+  bottom: 14.7px;
+  z-index: 2;
+}
+.comment-wrapper,
+.comment-wrapper-wrapper,
+.content2,
+.detail {
+  display: flex;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+.comment-wrapper {
+  align-self: stretch;
+  flex: 1;
+  border-radius: var(--br-xl);
+  background-color: var(--background-default-default);
+  flex-direction: column;
+  align-items: flex-end;
+  padding: var(--padding-base) 46px var(--padding-xs) var(--padding-2xl);
+  position: relative;
+  gap: 32px;
+  max-width: 100%;
+  z-index: 1;
+}
+.comment-wrapper-wrapper,
+.content2,
+.detail {
+  align-items: flex-start;
+}
+.comment-wrapper-wrapper {
+  align-self: stretch;
+  height: 172px;
+  flex-direction: row;
+  padding: 0 13px 0 var(--padding-2xs);
+  max-width: 100%;
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--color-black);
+  font-family: var(--font-yomogi);
+}
+.content2,
+.detail {
+  flex-direction: column;
+}
+.content2 {
+  align-self: stretch;
+  background-color: var(--color-palegoldenrod-100);
+  padding: var(--padding-5xs) 0 var(--padding-base);
+  gap: 4px;
+  max-width: 100%;
+}
+.detail {
+  width: 100%;
+  position: relative;
+  background-color: var(--background-default-default);
+  padding: 0 0 138px;
+  line-height: normal;
+  letter-spacing: normal;
+}
