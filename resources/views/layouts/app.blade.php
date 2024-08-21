@@ -12,6 +12,8 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
         <!-- Scripts -->
+        <link href="{{ asset('css/global.css') }}" rel="stylesheet">
+        @stack('styles')
         @vite(['resources/css/app.css', 'resources/sass/app.scss', 'resources/js/app.js'])
 
     </head>
