@@ -1,39 +1,3 @@
-.a,
-.title-child {
-  position: relative;
-}
-.title-child {
-  height: 103px;
-  width: 375px;
-  background-color: var(--color-sandybrown);
-  display: none;
-  max-width: 100%;
-
-}
-.a {
-  text-decoration: none;
-  color: inherit;
-  z-index: 1;
-}
-.title {
-  background-color: var(--color-sandybrown);
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding: var(--padding-28xl) var(--padding-28xl) 0 48px;
-  box-sizing: border-box;
-  top: 0;
-  z-index: 99;
-  position: sticky;
-  max-width: 100%;
-  text-align: left;
-  font-size: 40px;
-  color: var(--color-darkolivegreen);
-  font-family: var(--font-yomogi);
-  width: 100%;
-  justify-content: center;
-}
 .googlemap-icon {
   height: 336px;
   flex: 1;
