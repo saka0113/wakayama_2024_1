@@ -10,6 +10,16 @@ body {
     inset: 0;
 }
 
+.header {
+  background-color: var(--color-sandybrown);
+  display: flex;
+  padding: var(--padding-28xl) var(--padding-28xl) 0 48px;
+  font-size: 40px;
+  color: var(--color-darkolivegreen);
+  font-family: var(--font-yomogi);
+  justify-content: center;
+}
+
 :root {
     /* fonts */
     --font-work-sans: "Work Sans";
