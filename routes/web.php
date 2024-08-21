@@ -31,11 +31,7 @@ Route::get('/home', function () {
 Route::get('/list', [ArticleController::class, 'index'])->name('articles.list');
 Route::post('/list/store', [ArticleController::class, 'store'])->name('articles.store');
 
-Route::get('/create', function () {
-    return view('create');
-})->name('create');
-
-Route::get('/create', [CreateController::class, 'create'])->name('create');
+Route::get('/create', [ArticleController::class, 'create'])->name('articles.create');
 
 Route::get('/detail', function () {
     return view('detail');

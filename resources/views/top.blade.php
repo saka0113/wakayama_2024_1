@@ -43,7 +43,7 @@
                 var contentSection = document.getElementById("toukouContainer");
                 if (contentSection) {
                     contentSection.addEventListener("click", function () {
-                        window.location.href = "{{ route('create') }}";
+                        window.location.href = "{{ route('articles.create') }}";
                     });
                 }
             });
