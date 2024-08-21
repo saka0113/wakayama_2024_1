@@ -16,7 +16,12 @@
         @foreach ($articles as $article)
             <div class="square_content">
                 <a href="./{{$article->content}}"><img class="square_image" src="{{ $article->content }}"></a>
-                <p>test</p>
+                <div  class = "icon_box ">
+                    <img alt="" src="{{ asset('images/icon.svg') }}">
+                    <!-- クリック時に言い値のカウントが増えるようにする -->
+                    <img alt="" src="{{ asset('images/icon-11.svg') }}">
+                    <!-- キープも同様 -->
+                </div>
             </div>
         @endforeach
     </div>

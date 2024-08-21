@@ -12,15 +12,15 @@
     padding: 5px;
 }
 
-.square_content p {
+.icon_box {
     position: absolute;/*絶対配置*/
-    color: red;/*文字は白に*/
-    bottom: 0;
-    right: 0;
-    font-weight: bold;
-    font-size: 2em;
-
+    right: 5px;
+    bottom: 5px;
 }
+/* 
+.favorite_color{
+    color: red;
+} */
 
 .square_image {
     object-fit: cover;
