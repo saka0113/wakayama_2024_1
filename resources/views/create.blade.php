@@ -3,6 +3,8 @@
   <link rel="stylesheet" href="{{ asset('css/create.css') }}">
   @endpush
 
+  <x-slot name="header"></x-slot>
+
   <form action="{{ route('articles.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <div>

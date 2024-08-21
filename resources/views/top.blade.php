@@ -1,16 +1,11 @@
 <x-app-layout>
     @push('styles')
         <link rel="stylesheet" href="{{ asset('css/top.css') }}" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yomogi:wght@400&display=swap" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400&display=swap" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" />
     @endpush
 
+    <x-slot name="header"></x-slot>
+
     <div class="top">
-        <header class="title">
-            <div class="title-child"></div>
-            <a class="a">和歌山うちわ飯</a>
-        </header>
         <section class="location">
             <div class="googlemap-parent">
                 <img class="googlemap-icon" alt="" src="{{ asset('images/googlemap@2x.png') }}" id="googlemapImage" />

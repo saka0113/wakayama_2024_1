@@ -1,27 +1,11 @@
 <x-app-layout>
     @push('styles')
     <link rel="stylesheet" href="{{ asset('css/detail.css') }}" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Yomogi:wght@400&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap"
-    />
     @endpush
 
+    <x-slot name="header"></x-slot>
+
     <div class="detail">
-      <header class="title4" id="title">
-        <div class="title5">
-          <div class="title-child1"></div>
-          <a class="a3" id="text">和歌山うちわ飯</a>
-        </div>
-      </header>
       <main class="content2">
         <div class="content-child"></div>
         <div class="inner-content">

@@ -1,9 +1,6 @@
 <x-app-layout>
     @push('styles')
     <link rel="stylesheet" href="{{ asset('css/category.css') }}" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yomogi:wght@400&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work Sans:wght@400&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" />
     @endpush
 
     <div class="category">
