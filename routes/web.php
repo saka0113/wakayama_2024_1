@@ -3,7 +3,6 @@
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
-use App\Http\Controllers\CreateController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,8 +17,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
-});
+    return view('top');
+})->name('top');
+
+Route::get('/category', function () {
+    return view('category');
+})->name('category');
 
 Route::get('/home', function () {
     return view('home');
@@ -28,8 +31,15 @@ Route::get('/home', function () {
 Route::get('/list', [ArticleController::class, 'index'])->name('articles.list');
 Route::post('/list/store', [ArticleController::class, 'store'])->name('articles.store');
 
+Route::get('/create', function () {
+    return view('create');
+})->name('create');
+
 Route::get('/create', [CreateController::class, 'create'])->name('create');
 
+Route::get('/detail', function () {
+    return view('detail');
+})->name('detail');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -46,5 +56,4 @@ Route::middleware('auth')->group(function () {
     Route::get('/myposts', [PostController::class, 'myPosts'])->name('myposts');
 });
 
-require __DIR__.'/auth.php';
-
+require __DIR__ . '/auth.php';
