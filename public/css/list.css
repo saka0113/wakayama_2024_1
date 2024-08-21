@@ -1,0 +1,28 @@
+.square_contents {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+}
+
+.square_content{
+    /* display: block;*/
+    position: relative; 
+    width: calc(100% / 3);
+    height: auto;
+    padding: 5px;
+}
+
+.square_content p {
+    position: absolute;/*絶対配置*/
+    color: red;/*文字は白に*/
+    bottom: 0;
+    right: 0;
+    font-weight: bold;
+    font-size: 2em;
+
+}
+
+.square_image {
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+}

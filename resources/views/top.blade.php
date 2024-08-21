@@ -1,18 +1,9 @@
 <x-app-layout>
     @push('styles')
         <link rel="stylesheet" href="{{ asset('css/top.css') }}" />
-        <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Yomogi:wght@400&display=swap"
-        />
-        <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400&display=swap"
-        />
-        <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap"
-        />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yomogi:wght@400&display=swap" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400&display=swap" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" />
     @endpush
 
     <div class="top">
@@ -22,22 +13,11 @@
         </header>
         <section class="location">
             <div class="googlemap-parent">
-                <img
-                    class="googlemap-icon"
-                    alt=""
-                    src="{{ asset('images/googlemap@2x.png') }}"
-                    id="googlemapImage"
-                />
-                <img
-                    class="kensaku-icon"
-                    loading="lazy"
-                    alt=""
-                    src="{{ asset('images/kensaku.svg') }}"
-                    id="kensaku"
-                />
+                <img class="googlemap-icon" alt="" src="{{ asset('images/googlemap@2x.png') }}" id="googlemapImage" />
+                <img class="kensaku-icon" loading="lazy" alt="" src="{{ asset('images/kensaku.svg') }}" id="kensaku" />
             </div>
         </section>
-        <section class="content">
+        <section class="content" id="contentSection">
             <div class="toukou" id="toukouContainer">
                 <div class="toukou-child"></div>
                 <div class="toukou-wrapper">
@@ -49,11 +29,7 @@
         <section class="content1">
             <div class="mypage" id="mypageContainer">
                 <div class="profile-picture"></div>
-                <img
-                    class="profile-icon"
-                    loading="lazy"
-                    alt=""
-                    src="{{ asset('images/vector.svg') }}" />
+                <img class="profile-icon" loading="lazy" alt="" src="{{ asset('images/vector.svg') }}" />
                 <div class="my-page-label">
                     <div class="div1">マイページ</div>
                 </div>
@@ -64,31 +40,10 @@
     @push('scripts')
         <script>
             document.addEventListener('DOMContentLoaded', function () {
-                var googlemapImage = document.getElementById("googlemapImage");
-                if (googlemapImage) {
-                    googlemapImage.addEventListener("click", function (e) {
-                        window.location.href = "{{ url('list') }}";
-                    });
-                }
-                
-                var kensaku = document.getElementById("kensaku");
-                if (kensaku) {
-                    kensaku.addEventListener("click", function (e) {
-                        // Please sync "searchcategory" to the project
-                    });
-                }
-                
-                var toukouContainer = document.getElementById("toukouContainer");
-                if (toukouContainer) {
-                    toukouContainer.addEventListener("click", function (e) {
-                        window.location.href = "{{ url('post') }}";
-                    });
-                }
-                
-                var mypageContainer = document.getElementById("mypageContainer");
-                if (mypageContainer) {
-                    mypageContainer.addEventListener("click", function (e) {
-                        // Please sync "proflie（たぶんいらない）" to the project
+                var contentSection = document.getElementById("toukouContainer");
+                if (contentSection) {
+                    contentSection.addEventListener("click", function () {
+                        window.location.href = "{{ route('create') }}";
                     });
                 }
             });
