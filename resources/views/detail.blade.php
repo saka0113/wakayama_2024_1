@@ -9,15 +9,17 @@
       <main class="content2">
         <div class="content-child"></div>
         <div class="inner-content">
+        <button type="button" onClick="history.back()">
           <img
-            class="inner-content-child"
-            loading="lazy"
-            alt="Description of image"
-            src="{{ asset('images/group-43.svg') }}"
-          />
+              class="inner-content-child"
+              loading="lazy"
+              alt="Description of image"
+              src="{{ asset('images/group-43.svg') }}"
+            /></button>
+            
         </div>
         <section class="image-placeholder-wrapper">
-          <textarea class="image-placeholder" rows="16" cols="19"></textarea>
+        <!-- 写真　全体が映るよう"object-fit: contain;"を使う -->
         </section>
         <section class="comment-wrapper-wrapper">
           <div class="comment-wrapper">
