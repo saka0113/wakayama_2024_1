@@ -7,7 +7,7 @@
     <h1>paiza bbs</h1>
     <p>{{ $message }}</p>
     @foreach ($articles as $article)
-      <p>{{ $article->content }}</p>
+      <img src="{{ asset('storage/' . $article->image_path) }}" alt="Article Image">
     @endforeach
   </div>
 </x-app-layout>
