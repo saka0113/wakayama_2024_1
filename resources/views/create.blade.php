@@ -3,6 +3,16 @@
   <link rel="stylesheet" href="{{ asset('css/create.css') }}">
   @endpush
 
+  <form action="{{ route('articles.store') }}" method="POST" enctype="multipart/form-data">
+    @csrf
+    <div>
+        <label for="image">Upload Image:</label>
+        <input type="file" name="image" id="image" required>
+    </div>
+    <!-- Add other article fields here -->
+    <button type="submit">Submit</button>
+  </form>
+
   <div class="post">
     <div class="frame-image frame-child10">
       <img

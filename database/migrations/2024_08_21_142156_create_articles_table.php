@@ -13,11 +13,12 @@ return new class extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
-            $table->string('content');
-            $table->BigInteger('genre')->unsigned();
-            $table->BigInteger('ninzu')->unsigned();
-            $table->BigInteger('price')->unsigned();
-            $table->BigInteger('feature')->unsigned();
+            $table->string('content')->nullable();
+            $table->string('image_path');
+            $table->BigInteger('genre')->nullable();
+            $table->BigInteger('ninzu')->nullable();
+            $table->BigInteger('price')->nullable();
+            $table->BigInteger('feature')->nullable();
             $table->timestamps();
         });
     }

@@ -28,7 +28,8 @@ Route::get('/home', function () {
     return view('home');
 })->name('home');
 
-Route::get('/list', [ArticleController::class, 'index'])->name('article.list');
+Route::get('/list', [ArticleController::class, 'index'])->name('articles.list');
+Route::post('/list/store', [ArticleController::class, 'store'])->name('articles.store');
 
 Route::get('/create', function () {
     return view('create');
