@@ -30,16 +30,16 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'content' => 'required|string|max:255',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            // Add other validation rules for the article fields
         ]);
 
         if ($image = $request->file('image')) {
             $file_name = basename($image->store('public'));
 
             Article::create([
+                'content' => $request->input('content'),
                 'image_path' => $file_name,
-                // Assign other article fields here
             ]);
 
             return redirect()->route('articles.list')->with('success', 'Article created successfully!');
