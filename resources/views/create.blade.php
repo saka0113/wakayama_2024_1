@@ -19,7 +19,7 @@
           <input type="file" name="image" id="image" style="opacity: 0;" required>
         </div>
         <div class="textarea">
-          <input class="value" placeholder="コメント" type="text" />
+          <input class="value" name="content" placeholder="コメント" type="text" />
         </div>
 
         <!-- カテゴリのポップアップ -->

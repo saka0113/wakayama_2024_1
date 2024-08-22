@@ -10,7 +10,7 @@ class Article extends Model
     use HasFactory;
 
     protected $fillable = [
+        "content",
         'image_path',
-        // Add other fields that you want to allow mass assignment for
     ];
 }

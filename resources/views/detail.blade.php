@@ -34,7 +34,7 @@
                   </div>
                 </div>
                 <div class="container">
-                  <div class="div5">コメント、#〇〇</div>
+                  <div class="div5">{{$article->content}}</div>
                 </div>
               </div>
             </div>
