@@ -45,6 +45,10 @@ Route::get('/search', function () {
     return view('search');
 })->name('search');
 
+Route::get('/place', function () {
+    return view('place');
+})->name('place');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
