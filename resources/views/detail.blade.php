@@ -20,6 +20,7 @@
         </div>
         <section class="image-placeholder-wrapper">
         <!-- 写真　全体が映るよう"object-fit: contain;"を使う -->
+        <img src="{{ asset('storage/' . $article->image_path) }}" alt="Article Image">
         </section>
         <section class="comment-wrapper-wrapper">
           <div class="comment-wrapper">
