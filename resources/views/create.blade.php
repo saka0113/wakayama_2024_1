@@ -5,23 +5,18 @@
 
   <x-slot name="header"></x-slot>
 
+  <div class="post">
   <form action="{{ route('articles.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <div>
-        <label for="image">Upload Image:</label>
-        <input type="file" name="image" id="image" required>
-    </div>
-    <!-- Add other article fields here -->
-    <button type="submit">Submit</button>
-  </form>
-
-  <div class="post">
-    <div class="frame-image frame-child10">
+    <div class="frame-image frame-child10" id="upload-div">
       <img
         class="vector-icon"
         loading="lazy"
-        alt=""
+        alt="Image preview"
+        id="previewImage"
         src="{{ asset('images/vector1.svg') }}" />
+      <input type="file" name="image" id="image" style="opacity: 0;" required>
     </div>
     <div class="textarea">
       <input class="value" placeholder="コメント" type="text" />
@@ -63,7 +58,7 @@
       </div>
     </div>
     <div class="toukou-container">
-      <button class="flex toukou1" id="toukou">
+      <button class="flex toukou1" id="toukou" type="submit">
         <div class="post-icon">
           <img
             class="add-icon"
@@ -75,6 +70,9 @@
       </button>
     </div>
   </div>
+  </form>
+  </div>
+
   <script>
     var text3 = document.getElementById("text3");
     if (text3) {
@@ -89,6 +87,21 @@
         window.location.href = "./top1.html";
       });
     }
+    
+    document.getElementById('upload-div').addEventListener('click', function() {
+      document.getElementById('image').click();
+    });
+
+    document.getElementById('image').addEventListener('change', function(event) {
+      var file = event.target.files[0];
+      if (file) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+          document.getElementById('previewImage').src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    });
 
     var categoryContainer = document.getElementById("categoryContainer");
     if (categoryContainer) {
