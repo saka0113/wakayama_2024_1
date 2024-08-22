@@ -11,6 +11,7 @@ class Article extends Model
 
     protected $fillable = [
         "content",
-        'image_path',
+        "image_path",
+        "city_id",
     ];
 }

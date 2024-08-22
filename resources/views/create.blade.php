@@ -6,7 +6,7 @@
   <x-slot name="header"></x-slot>
 
   <div class="post">
-    <form action="{{ route('articles.store') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('article.store') }}" method="POST" enctype="multipart/form-data">
       @csrf
       <div>
         <div class="frame-image frame-child10" id="upload-div">
