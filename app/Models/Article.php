@@ -16,6 +16,5 @@ class Article extends Model
         'ninzu',
         'price',
         'feature',
-
     ];
 }

@@ -29,10 +29,7 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        logger(__LINE__);
-        logger($request->all());
         $request->validate([
-            //ここでDBに格納したい種類増やせる
             'content' => 'required|string|max:255',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'genre' => 'required|string',
@@ -41,11 +38,8 @@ class ArticleController extends Controller
             'feature' => 'required|string',
         ]);
 
-        logger(__LINE__);
         if ($image = $request->file('image')) {
             $file_name = basename($image->store('public'));
-
-            logger(__LINE__);
 
             Article::create([
                 'content' => $request->input('content'),
@@ -55,8 +49,6 @@ class ArticleController extends Controller
                 'price' => $request->input('price'),
                 'feature' => $request->input('feature'),
             ]);
-
-            logger(__LINE__);
 
             return redirect()->route('articles.list')->with('success', 'Article created successfully!');
         }

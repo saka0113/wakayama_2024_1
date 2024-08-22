@@ -7,11 +7,7 @@
         <div class="frame">
             <a class="a4">カテゴリの追加</a>
         </div>
-        <main class="main-category">
-            <!-- フォーム開始 -->
-         <form action="{{ route('articles.store') }}" method="POST" enctype="multipart/form-data">
-                @csrf
-                
+        <main class="main-category">                
             <!-- ジャンル -->
             <div class="category-section">
                 <div class="category-title">ジャンル</div>
@@ -63,17 +59,15 @@
             <!-- 送信ボタン -->
             <button type="button" id="categorySelectButton">選択完了</button>
             <script>
-  document.getElementById('categorySelectButton').addEventListener('click', function() {
-                            document.getElementById('selectedGenre').value = document.querySelector('input[name="genre"]:checked')?.value;
-                            document.getElementById('selectedNinzu').value = document.querySelector('input[name="ninzu"]:checked')?.value;
-                            document.getElementById('selectedPrice').value = document.querySelector('input[name="price"]:checked')?.value;
-                            document.getElementById('selectedFeature').value = document.querySelector('input[name="feature"]:checked')?.value;
-                            document.getElementById('categoryPopup').style.display = 'none';
-    // 選択されたラジオボタンの値を取得
-  });
-</script>
-         </form>
-            <!-- フォーム終了 -->
+            document.getElementById('categorySelectButton').addEventListener('click', function() {
+                // 選択されたラジオボタンの値を取得
+                document.getElementById('selectedGenre').value = document.querySelector('input[name="genre"]:checked')?.value;
+                document.getElementById('selectedNinzu').value = document.querySelector('input[name="ninzu"]:checked')?.value;
+                document.getElementById('selectedPrice').value = document.querySelector('input[name="price"]:checked')?.value;
+                document.getElementById('selectedFeature').value = document.querySelector('input[name="feature"]:checked')?.value;
+                document.getElementById('categoryPopup').style.display = 'none';
+            });
+            </script>
         </main>
     </div>
 </x-app-layout>
