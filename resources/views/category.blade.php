@@ -7,17 +7,6 @@
         <div class="frame">
             <a class="a4">カテゴリの追加</a>
         </div>
-        <div class="category-inner">
-            <div class="frame-parent">
-                <div class="search-wrapper">
-                    <img class="search-icon" loading="lazy" alt="" src="{{ asset('images/search.svg') }}" />
-                </div>
-                <div class="search">
-                    <input class="value" placeholder="Value" type="text" />
-                    <img class="x-icon" alt="" src="{{ asset('images/x.svg') }}" />
-                </div>
-            </div>
-        </div>
         <main class="main-category">
             <!-- ジャンル -->
             <div class="category-section">
