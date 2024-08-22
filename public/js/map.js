@@ -21,21 +21,33 @@ map.addListener("click", (event) => {
 }
 
 function getAddress(latLng) {
-const geocoder = new google.maps.Geocoder();
-geocoder.geocode({ location: latLng }, (results, status) => {
-    if (status === "OK" && results[0]) {
-        const cityInfo = results[0].address_components.find(component => component.types.includes("locality"));
-        const municipality = cityInfo ? cityInfo.long_name : "市町村情報が見つかりませんでした。";
-        document.getElementById("location-info").innerText = "市町村: " + municipality;
-        if (municipality) {
-            // 市町村名をURLのクエリパラメータとして追加
-            const newUrl = new URL(window.location.href);
-            newUrl.searchParams.set('municipality', municipality);
-            window.history.pushState({}, '', newUrl);
+    const geocoder = new google.maps.Geocoder();
+    geocoder.geocode({ location: latLng }, (results, status) => {
+        if (status === "OK" && results[0]) {
+            const cityInfo = results[0].address_components.find(component => component.types.includes("locality"));
+            const municipality = cityInfo ? cityInfo.long_name : "市町村情報が見つかりませんでした。";
+            document.getElementById("location-info").innerText = "市町村: " + municipality;
+
+            if (municipality) {
+                // 市町村名をAPIに送信してIDを取得
+                fetch(`/get-city-id?municipality=${encodeURIComponent(municipality)}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.id) {
+                            // IDが取得できたらリダイレクト
+                            window.location.href = `/list/${data.id}`;
+                        } else {
+                            document.getElementById("location-info").innerText = "市町村が見つかりませんでした。";
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        document.getElementById("location-info").innerText = "エラーが発生しました。";
+                    });
+            }
+        } else {
+            document.getElementById("location-info").innerText = "位置情報の取得に失敗しました。";
         }
-    } else {
-        document.getElementById("location-info").innerText = "位置情報の取得に失敗しました。";
-    }
-});
+    });
 }
 
