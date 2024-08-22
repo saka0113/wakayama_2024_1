@@ -150,7 +150,6 @@
   background-color: var(--background-default-default);
   overflow: hidden;
   flex-direction: column;
-  padding: 0 0 157px;
   gap: var(--gap-3xs);
   line-height: normal;
   letter-spacing: normal;
@@ -158,4 +157,9 @@
   font-size: var(--font-size-13xl);
   color: var(--color-darkolivegreen);
   font-family: var(--font-work-sans);
+}
+
+.map-style{
+  width: 100%;
+  aspect-ratio: 5/6;
 }
