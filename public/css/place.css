@@ -1,0 +1,66 @@
+.place {
+  background-color: rgb(255, 255, 255);
+}
+
+.a4 {
+  text-decoration: none;
+  position: relative;
+  color: inherit;
+  font-size: 25px;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.frame {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-top: 10px;
+  font-family: var(--font-yomogi);
+}
+
+.main-place {
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 20px;
+}
+
+.place-title {
+  font-size: 20px;
+  padding-left: 5px;
+  color: chocolate;
+  font-weight: bold;
+}
+
+.place-section {
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.place-items {
+  display: flex;
+  flex-wrap: wrap; /* 複数行に折り返す */
+  gap: 10px; /* アイテム間の隙間 */
+  margin: 10px;
+}
+
+.place-items .placename {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background-color: #cccbcb;
+  color: #000000;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+  flex: 1 1 calc(45% - 10px); /* 幅を45%に設定し、10pxの隙間を考慮 */
+  box-sizing: border-box; /* パディングとボーダーを含めた幅の計算 */
+  text-align: center; /* テキストを中央に配置 */
+}
+
+.place-items .placename:hover {
+  background-color: #e0e0e0;
+  color: #333333;
+}
