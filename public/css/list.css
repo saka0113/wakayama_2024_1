@@ -17,12 +17,21 @@
     right: 5px;
     bottom: 5px;
 }
-/* 
-.favorite_color{
-    color: red;
-} */
 
 .square_image {
     object-fit: cover;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1;
+}
+
+.mypage_line{
+    display: flex;
+    left: 10% 
+}
+
+.circle{
+    border-radius: 100%;
+    aspect-ratio: 1;
+    background-color: #d8d8d8;
+    color: gray;
+    cursor: pointer;
 }
