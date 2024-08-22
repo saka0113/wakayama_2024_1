@@ -54,7 +54,7 @@
             var toukouContainer = document.getElementById("toukouContainer");
             if (toukouContainer) {
                 toukouContainer.addEventListener("click", function (e) {
-                    window.location.href = "{{ url('post') }}";
+                    window.location.href = "{{ url('create') }}";
                 });
             }
 

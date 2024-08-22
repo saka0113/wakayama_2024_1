@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="{{ asset('css/place.css') }}" />
     @endpush
 
-    <div class="place">
+    <div class="place2">
         <div class="frame">
             <a class="a4">エリアの選択</a>
         </div>
