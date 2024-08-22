@@ -12,5 +12,10 @@ class Article extends Model
     protected $fillable = [
         "content",
         'image_path',
+        'genre',
+        'ninzu',
+        'price',
+        'feature',
+
     ];
 }
