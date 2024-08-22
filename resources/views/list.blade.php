@@ -7,6 +7,7 @@
 
   <div>
     <div class="square_contents">
+      <h1>{{$message}}</h1>
       @foreach ($articles as $article)
       <div class="square_content">
         <a href='{{ route("article.show", ["id" => $article->id]) }}'>
