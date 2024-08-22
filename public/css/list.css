@@ -23,15 +23,7 @@
     aspect-ratio: 1;
 }
 
-.mypage_line{
-    display: flex;
-    left: 10% 
-}
-
-.circle{
-    border-radius: 100%;
-    aspect-ratio: 1;
-    background-color: #d8d8d8;
-    color: gray;
-    cursor: pointer;
+.icon_size{
+    width: 5vw;
+    height: auto;
 }

@@ -13,9 +13,9 @@
           <img class="square_image" src="{{ asset('storage/' . $article->image_path) }}" alt="Article Image">
         </a>
         <div class="icon_box ">
-          <img alt="" src="{{ asset('images/icon.svg') }}">
+          <img class="icon_size" alt="" src="{{ asset('images/icon.svg') }}">
           <!-- クリック時に'いいね'のカウントが増えるようにする -->
-          <img alt="" src="{{ asset('images/icon-11.svg') }}">
+          <img class="icon_size" alt="" src="{{ asset('images/icon-11.svg') }}">
           <!-- キープも同様 -->
         </div>
       </div>
