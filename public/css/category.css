@@ -1,3 +1,5 @@
+
+
 .category {
   background-color:white;
 }
@@ -34,10 +36,10 @@
   display: flex;
   flex-wrap: wrap; /* 複数行に折り返す */
 }
-
 .category-items label {
   flex: 1 0 45%; /* 要素の幅を45%に設定し、2列に配置 */
   box-sizing: border-box; /* パディングとボーダーを含めた幅の計算 */
   margin-bottom: 10px; /* 要素間の縦のスペース */
   font-size: 18px;
 }
+
