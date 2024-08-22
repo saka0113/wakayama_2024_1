@@ -9,6 +9,9 @@
     <x-slot name="header"></x-slot>
 
     <div class="top">
+        <div class="siyou">
+            <div>↓ マップをクリックしてマイナーご飯を検索しよう ↓</div>
+        </div>
         <section class="location">
             <div id="map" style="height: 500px; width: 100%;"></div>
             <div id="location-info"></div>
