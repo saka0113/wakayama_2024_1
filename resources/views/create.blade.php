@@ -72,7 +72,7 @@
                 class="add-icon"
                 loading="lazy"
                 alt=""
-                src="{{ asset('images/vector-2.svg') }}" />
+                src="{{ asset('images/hikouki.svg') }}" />
             </div>
             <div class="div4">投稿</div>
           </button>
