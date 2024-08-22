@@ -21,6 +21,14 @@
         <div class="textarea">
           <input class="value" placeholder="コメント" type="text" />
         </div>
+
+        <!-- カテゴリのポップアップ -->
+        <div id="categoryPopup" class="popup-overlay" style="display:none;">
+          <div class="popup-content">
+            @include('category') <!-- category.blade.phpの内容をインクルード -->
+          </div>
+        </div>
+
         <div class="flex category" id="categoryContainer">
           <div class="tag-wrapper">
             <img class="tag-icon" loading="lazy" alt="" src="{{ asset('images/tag.svg') }}" />
@@ -33,7 +41,7 @@
           </div>
         </div>
 
-        <!-- ポップアップの内容 -->
+        <!-- 場所のポップアップ -->
         <div id="placePopup" class="popup-overlay" style="display:none;">
           <div class="popup-content">
             @include('place') <!-- place.blade.phpの内容をインクルード -->
@@ -89,6 +97,16 @@
       }
     });
 
+    // カテゴリを追加をクリックしたときの処理
+    var categoryContainer = document.getElementById("categoryContainer");
+    if (categoryContainer) {
+      categoryContainer.addEventListener("click", function() {
+        var popup = document.getElementById("categoryPopup");
+        popup.style.display = "flex";
+      });
+    }
+
+    // 場所を追加をクリックしたときの処理
     var placeContainer = document.getElementById("placeContainer");
     if (placeContainer) {
       placeContainer.addEventListener("click", function() {
@@ -97,15 +115,16 @@
       });
     }
 
-    var placePopup = document.getElementById("placePopup");
-    if (placePopup) {
-      placePopup.addEventListener("click", function(event) {
+    // ポップアップを閉じる処理
+    var popups = document.querySelectorAll('.popup-overlay');
+    popups.forEach(function(popup) {
+      popup.addEventListener("click", function(event) {
         if (event.target === this) {
           this.style.display = "none";
         }
       });
-    }
-
+    });
+    
     var toukou = document.getElementById("toukou");
     if (toukou) {
       toukou.addEventListener("click", function(e) {
