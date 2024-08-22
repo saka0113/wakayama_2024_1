@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,16 +15,18 @@
 
         <!-- Scripts -->
         <link href="{{ asset('css/global.css') }}" rel="stylesheet">
-        @stack('styles')
         @vite(['resources/css/app.css', 'resources/sass/app.scss', 'resources/js/app.js'])
 
+        @stack('styles')
+
     </head>
+    
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
 
             <!-- Page Heading -->
             @if (isset($header))
-                <header class="header">
+                <header class="header" id="header">
                     <a>和歌山うちわ飯</a>
                 </header>
             @endif
@@ -39,5 +42,17 @@
                 {{ $slot }}
             </main>
         </div>
+        
+        <!-- Stack for scripts -->
+        @stack('scripts')
+
+        <script>
+            var header = document.getElementById("header");
+            if (header) {
+            header.addEventListener("click", function(e) {
+                window.location.href = '{{ route("top") }}';
+            });
+            }
+        </script>
     </body>
 </html>
