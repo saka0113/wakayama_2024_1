@@ -51,9 +51,10 @@ class ArticleController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Article $article)
+    public function show(Request $request, $id, Article $article)
     {
-        //
+        $article = Article::find($id);
+        return view('detail', ['article' => $article]);
     }
 
     /**

@@ -33,9 +33,7 @@ Route::post('/list/store', [ArticleController::class, 'store'])->name('articles.
 
 Route::get('/create', [ArticleController::class, 'create'])->name('articles.create');
 
-Route::get('/detail', function () {
-    return view('detail');
-})->name('detail');
+Route::get('/detail/{id}', [ArticleController::class, 'show'])->name('article.show');
 
 Route::get('/user', function () {
     return view('user');
