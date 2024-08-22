@@ -36,7 +36,7 @@
 .place-section {
   padding-top: 10px;
   padding-left: 10px;
-  padding-right: 10px;
+  /* padding-right: 10px; */
 }
 
 .place-items {
@@ -47,6 +47,7 @@
 }
 
 .place-items .placename {
+  max-width: 49%;
   display: inline-block;
   padding: 5px 10px;
   border-radius: 8px;
