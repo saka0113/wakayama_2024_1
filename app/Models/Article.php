@@ -13,5 +13,9 @@ class Article extends Model
         "content",
         "image_path",
         "city_id",
+        "genre",
+        "ninzu",
+        "price",
+        "feature",
     ];
 }

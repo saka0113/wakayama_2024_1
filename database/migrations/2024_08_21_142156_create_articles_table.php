@@ -16,10 +16,10 @@ return new class extends Migration
             $table->string('content')->nullable();
             $table->string('image_path');
             $table->integer('city_id');
-            $table->BigInteger('genre')->nullable();
-            $table->BigInteger('ninzu')->nullable();
-            $table->BigInteger('price')->nullable();
-            $table->BigInteger('feature')->nullable();
+            $table->string('genre')->nullable();
+            $table->string('ninzu')->nullable();
+            $table->string('price')->nullable();
+            $table->string('feature')->nullable();
             $table->timestamps();
         });
     }

@@ -21,6 +21,12 @@
         <div class="textarea">
           <input class="value" name="content" placeholder="コメント" type="text" />
         </div>
+        
+        <!-- hiddenフィールドでクエリパラメータを保持 -->
+        <input type="hidden" name="genre" id="selectedGenre" >
+        <input type="hidden" name="ninzu" id="selectedNinzu" >
+        <input type="hidden" name="price" id="selectedPrice" >
+        <input type="hidden" name="feature" id="selectedFeature" >
 
         <!-- カテゴリのポップアップ -->
         <div id="categoryPopup" class="popup-overlay" style="display:none;">

@@ -67,6 +67,10 @@ class ArticleController extends Controller
             'content' => 'required|string|max:255',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'city_id' => 'required|integer',
+            'genre' => 'required|string',
+            'ninzu' => 'required|string',
+            'price' => 'required|string',
+            'feature' => 'required|string',
         ]);
 
         if ($image = $request->file('image')) {
@@ -77,6 +81,10 @@ class ArticleController extends Controller
                 'content' => $request->input('content'),
                 'image_path' => $file_name,
                 'city_id' => $city_id,
+                'genre' => $request->input('genre'),
+                'ninzu' => $request->input('ninzu'),
+                'price' => $request->input('price'),
+                'feature' => $request->input('feature'),
             ]);
 
             return redirect()->route('article.list', ["id" => $city_id])->with('success', 'Article created successfully!');

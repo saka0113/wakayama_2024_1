@@ -3,11 +3,11 @@
     <link rel="stylesheet" href="{{ asset('css/category.css') }}" />
     @endpush
 
-    <div class="category2">
+    <div class="category">
         <div class="frame">
             <a class="a4">カテゴリの追加</a>
         </div>
-        <main class="main-category">
+        <main class="main-category">                
             <!-- ジャンル -->
             <div class="category-section">
                 <div class="category-title">ジャンル</div>
@@ -28,10 +28,10 @@
             <div class="category-section">
                 <div class="category-title">人数</div>
                 <div class="category-items">
-                    <label><input type="radio" name="people" value="1人"> 1人</label>
-                    <label><input type="radio" name="people" value="2人"> 2人</label>
-                    <label><input type="radio" name="people" value="4人以下"> 4人以下</label>
-                    <label><input type="radio" name="people" value="5人以上"> 5人以上</label>
+                    <label><input type="radio" name="ninzu" value="1人"> 1人</label>
+                    <label><input type="radio" name="ninzu" value="2人"> 2人</label>
+                    <label><input type="radio" name="ninzu" value="4人以下"> 4人以下</label>
+                    <label><input type="radio" name="ninzu" value="5人以上"> 5人以上</label>
                 </div>
             </div>
 
@@ -56,6 +56,18 @@
                     <label><input type="radio" name="feature" value="人が少なく静か"> 人が少なく静か</label>
                 </div>
             </div>
+            <!-- 送信ボタン -->
+            <button type="button" id="categorySelectButton">選択完了</button>
+            <script>
+            document.getElementById('categorySelectButton').addEventListener('click', function() {
+                // 選択されたラジオボタンの値を取得
+                document.getElementById('selectedGenre').value = document.querySelector('input[name="genre"]:checked')?.value;
+                document.getElementById('selectedNinzu').value = document.querySelector('input[name="ninzu"]:checked')?.value;
+                document.getElementById('selectedPrice').value = document.querySelector('input[name="price"]:checked')?.value;
+                document.getElementById('selectedFeature').value = document.querySelector('input[name="feature"]:checked')?.value;
+                document.getElementById('categoryPopup').style.display = 'none';
+            });
+            </script>
         </main>
     </div>
 </x-app-layout>

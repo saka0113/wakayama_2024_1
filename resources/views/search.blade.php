@@ -28,10 +28,10 @@
             <div class="category-section">
                 <div class="category-title">人数</div>
                 <div class="category-items">
-                    <label><input type="radio" name="people" value="1人"> 1人</label>
-                    <label><input type="radio" name="people" value="2人"> 2人</label>
-                    <label><input type="radio" name="people" value="4人以下"> 4人以下</label>
-                    <label><input type="radio" name="people" value="5人以上"> 5人以上</label>
+                    <label><input type="radio" name="ninzu" value="1人"> 1人</label>
+                    <label><input type="radio" name="ninzu" value="2人"> 2人</label>
+                    <label><input type="radio" name="ninzu" value="4人以下"> 4人以下</label>
+                    <label><input type="radio" name="ninzu" value="5人以上"> 5人以上</label>
                 </div>
             </div>
 
