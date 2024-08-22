@@ -34,14 +34,12 @@
 
     @push('scripts')
         <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                var contentSection = document.getElementById("toukouContainer");
-                if (contentSection) {
-                    contentSection.addEventListener("click", function () {
-                        window.location.href = "{{ route('articles.create') }}";
-                    });
-                }
-            });
+            var contentSection = document.getElementById("toukouContainer");
+            if (contentSection) {
+                contentSection.addEventListener("click", function () {
+                    window.location.href = "{{ route('articles.create') }}";
+                });
+            }
         </script>
     @endpush
 </x-app-layout>
