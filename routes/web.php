@@ -1,9 +1,13 @@
 <?php
 
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\CityController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
+
+use App\Models\City;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +19,18 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::get('/get-city-id', function (Request $request) {
+    logger(__LINE__);
+    $municipality = $request->query('municipality');
+    $city = City::where('name', $municipality)->first();
+
+    if ($city) {
+        return response()->json(['id' => $city->id]);
+    } else {
+        return response()->json(['error' => '市町村が見つかりませんでした。'], 404);
+    }
+});
 
 Route::get('/', function () {
     return view('top');
@@ -29,6 +45,7 @@ Route::get('/home', function () {
 })->name('home');
 
 Route::get('/list', [ArticleController::class, 'index'])->name('articles.list');
+Route::get('/list/{id}', [CityController::class, 'show'])->name('city.show');
 Route::post('/list/store', [ArticleController::class, 'store'])->name('articles.store');
 
 Route::get('/create', [ArticleController::class, 'create'])->name('articles.create');
