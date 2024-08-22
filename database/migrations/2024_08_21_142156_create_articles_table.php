@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('content')->nullable();
             $table->string('image_path');
+            $table->string('place');
             $table->BigInteger('genre')->nullable();
             $table->BigInteger('ninzu')->nullable();
             $table->BigInteger('price')->nullable();
