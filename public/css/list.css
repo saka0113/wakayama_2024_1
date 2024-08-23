@@ -1,7 +1,6 @@
 .square_contents {
     display: flex;
     flex-wrap: wrap;
-    /* justify-content: space-between; */
 }
 
 .square_content{
