@@ -127,6 +127,7 @@
   .comment-content,
   .container {
     display: flex;
+    text-align: left;
     align-items: flex-start;
     justify-content: flex-start;
   }
