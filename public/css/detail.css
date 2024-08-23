@@ -69,6 +69,7 @@
     z-index: 1;
   }
   .image-placeholder-wrapper {
+    width: 100vw;
     align-self: stretch;
     display: flex;
     flex-direction: row;
@@ -76,7 +77,6 @@
     justify-content: flex-start;
     padding: 0 0 var(--padding-base);
     box-sizing: border-box;
-    max-width: 100%;
   }
   .comment-wrapper-child {
     width: 351px;
@@ -127,7 +127,6 @@
   .comment-content,
   .container {
     display: flex;
-    text-align: left;
     align-items: flex-start;
     justify-content: flex-start;
   }
