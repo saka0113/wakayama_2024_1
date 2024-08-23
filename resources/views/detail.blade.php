@@ -18,9 +18,9 @@
             /></button>
             
         </div>
-        <section class="image-placeholder-wrapper">
+        <section >
         <!-- 写真　全体が映るよう"object-fit: contain;"を使う -->
-        <img src="{{ asset('storage/' . $article->image_path) }}" alt="Article Image">
+        <img class="image-placeholder-wrapper" src="{{ asset('storage/' . $article->image_path) }}" alt="Article Image">
         </section>
         <section class="comment-wrapper-wrapper">
           <div class="comment-wrapper">
@@ -33,9 +33,7 @@
                     <div class="relic">Relic太郎</div>
                   </div>
                 </div>
-                <div class="container">
-                  <div class="div5">{{$article->content}}</div>
-                </div>
+                <div>{{$article->content}}</div>
               </div>
             </div>
             <img

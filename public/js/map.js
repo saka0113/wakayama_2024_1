@@ -29,21 +29,47 @@ function getAddress(latLng) {
             document.getElementById("location-info").innerText = "市町村: " + municipality;
 
             if (municipality) {
-                // 市町村名をAPIに送信してIDを取得
-                fetch(`/get-city-id?municipality=${encodeURIComponent(municipality)}`)
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.id) {
-                            // IDが取得できたらリダイレクト
-                            window.location.href = `/list/${data.id}`;
-                        } else {
-                            document.getElementById("location-info").innerText = "市町村が見つかりませんでした。";
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                        document.getElementById("location-info").innerText = "エラーが発生しました。";
-                    });
+                const cityIdMap = {
+                    "和歌山市": 1,
+                    "海南市": 2,
+                    "紀の川市": 3,
+                    "岩出市": 4,
+                    "橋本市": 5,
+                    "かつらぎ町": 6,
+                    "九度山町": 7,
+                    "高野町": 8,
+                    "紀美野町": 9,
+                    "有田市": 10,
+                    "御坊市": 11,
+                    "田辺市": 12,
+                    "有田川町": 13,
+                    "湯浅町": 14,
+                    "広川町": 15,
+                    "由良町": 16,
+                    "日高町": 17,
+                    "美浜町": 18,
+                    "日高川町": 19,
+                    "印南町": 20,
+                    "みなべ町": 21,
+                    "上富田町": 22,
+                    "白浜町": 23,
+                    "すさみ町": 24,
+                    "新宮市": 25,
+                    "古座川町": 26,
+                    "串本町": 27,
+                    "那智勝浦町": 28,
+                    "太地町": 29,
+                    "北山村": 30
+                };
+
+                const cityId = cityIdMap[municipality];
+
+                if (cityId) {
+                    // IDが取得できたらリダイレクト
+                    window.location.href = `/list/${cityId}`;
+                } else {
+                    document.getElementById("location-info").innerText = "市町村が見つかりませんでした。";
+                }
             }
         } else {
             document.getElementById("location-info").innerText = "位置情報の取得に失敗しました。";

@@ -8,6 +8,7 @@
             <a class="a4">カテゴリの検索</a>
         </div>
         <main class="main-category">
+         <form action="{{ route('search.results') }}" method="GET">
             <!-- ジャンル -->
             <div class="category-section">
                 <div class="category-title">ジャンル</div>
@@ -28,10 +29,10 @@
             <div class="category-section">
                 <div class="category-title">人数</div>
                 <div class="category-items">
-                    <label><input type="radio" name="people" value="1人"> 1人</label>
-                    <label><input type="radio" name="people" value="2人"> 2人</label>
-                    <label><input type="radio" name="people" value="4人以下"> 4人以下</label>
-                    <label><input type="radio" name="people" value="5人以上"> 5人以上</label>
+                    <label><input type="radio" name="ninzu" value="1人"> 1人</label>
+                    <label><input type="radio" name="ninzu" value="2人"> 2人</label>
+                    <label><input type="radio" name="ninzu" value="4人以下"> 4人以下</label>
+                    <label><input type="radio" name="ninzu" value="5人以上"> 5人以上</label>
                 </div>
             </div>
 
@@ -54,8 +55,12 @@
                     <label><input type="radio" name="feature" value="店員が優しい"> 店員が優しい</label>
                     <label><input type="radio" name="feature" value="料理の提供が早い"> 料理の提供が早い</label>
                     <label><input type="radio" name="feature" value="人が少なく静か"> 人が少なく静か</label>
+                    <button type="submit">検索</button>
                 </div>
             </div>
+            <!-- 検索ボタン -->
+            
+         </form>
         </main>
     </div>
 </x-app-layout>
