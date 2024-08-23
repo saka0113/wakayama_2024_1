@@ -141,7 +141,7 @@
     align-self: stretch;
   }
   .comment-content {
-    width: 177px;
+    width: 100%;
     flex-direction: column;
     gap: var(--gap-3xs);
   }
