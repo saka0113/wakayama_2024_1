@@ -86,6 +86,9 @@
                         link.addEventListener('click', (event) => {
                             document.getElementById('city_id').value = cityId;
                             document.getElementById('placePopup').style.display = 'none';
+
+                            const element = document.querySelector('.div3');
+                            element.textContent = city;
                         });
                         container.appendChild(link);
                     }

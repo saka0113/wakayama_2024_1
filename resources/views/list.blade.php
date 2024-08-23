@@ -6,9 +6,8 @@
   <x-slot name="header"></x-slot>
 
   <div>
-  <h1>{{$message}}</h1>
+    <h1>{{ $message }}</h1>
     <div class="square_contents">
-      <h1>{{$message}}</h1>
       @foreach ($articles as $article)
         <div class="square_content">
           <a href='{{ route("article.show", ["id" => $article->id]) }}'>

@@ -64,13 +64,13 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'content' => 'required|string|max:255',
+            'content' => 'nullable|string|max:255',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'city_id' => 'required|integer',
-            'genre' => 'required|string',
-            'ninzu' => 'required|string',
-            'price' => 'required|string',
-            'feature' => 'required|string',
+            'genre' => 'nullable|string',
+            'ninzu' => 'nullable|string',
+            'price' => 'nullable|string',
+            'feature' => 'nullable|string',
         ]);
 
         if ($image = $request->file('image')) {
