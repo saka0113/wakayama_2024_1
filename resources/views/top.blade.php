@@ -35,6 +35,14 @@
             </div>
         </section>
     </div>
+
+    <!-- 検索のポップアップ -->
+    <div id="searchPopup" class="popup-overlay" style="display:none;">
+        <div class="popup-content">
+            @include('search') <!-- search.blade.phpの内容をインクルード -->
+        </div>
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var googlemapImage = document.getElementById("googlemapImage");
