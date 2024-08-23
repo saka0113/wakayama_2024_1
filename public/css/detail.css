@@ -127,6 +127,7 @@
   .comment-content,
   .container {
     display: flex;
+    text-align: left;
     align-items: flex-start;
     justify-content: flex-start;
   }
@@ -141,7 +142,7 @@
     align-self: stretch;
   }
   .comment-content {
-    width: 177px;
+    width: 100%;
     flex-direction: column;
     gap: var(--gap-3xs);
   }
