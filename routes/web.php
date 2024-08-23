@@ -3,7 +3,6 @@
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
-use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -48,7 +47,7 @@ Route::get('/place', function () {
     return view('place');
 })->name('place');
 
-Route::get('/search/results', [SearchController::class, 'show'])->name('search.results');
+Route::get('/search/results', [ArticleController::class, 'search'])->name('search.results');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
