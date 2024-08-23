@@ -1,7 +1,6 @@
 h1 {
     text-align: center; /* テキストを中央揃えにする */
     color: #2d5e17;
-    font-style: ;
 }
 .square_contents {
     display: flex;
@@ -23,6 +22,7 @@ h1 {
 }
 
 .square_image {
+    width: 100%;
     object-fit: cover;
     aspect-ratio: 1;
 }
