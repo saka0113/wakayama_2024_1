@@ -1,6 +1,6 @@
 <x-app-layout>
     @push('styles')
-        <link rel="stylesheet" href="{{ asset('css/top.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/top.css') }}" />
     @endpush
     <!-- <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,47 +25,48 @@
                 <div class="div">投稿</div>
             </div>
         </section>
-        <section class="content1">
-            <div class="mypage" id="mypageContainer">
-                <div class="profile-picture"></div>
-                <img class="profile-icon" loading="lazy" alt="" src="{{ asset('images/vector.svg') }}" />
-                <div class="my-page-label">
-                    <div class="div1">マイページ</div>
+        <section class="content">
+            <div class="toukou" id="kensakuContainer">
+                <div class="toukou-child"></div>
+                <div class="toukou-wrapper">
+                    <img class="toukou-icon" alt="" src="{{ asset('images/kensaku.svg') }}" />
                 </div>
+                <div class="div">検索</div>
             </div>
         </section>
     </div>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             var googlemapImage = document.getElementById("googlemapImage");
             if (googlemapImage) {
-                googlemapImage.addEventListener("click", function (e) {
+                googlemapImage.addEventListener("click", function(e) {
                     window.location.href = "{{ url('list') }}";
                 });
             }
 
             var kensaku = document.getElementById("kensaku");
             if (kensaku) {
-                kensaku.addEventListener("click", function (e) {
+                kensaku.addEventListener("click", function(e) {
                     // Please sync "searchcategory" to the project
                 });
             }
 
             var toukouContainer = document.getElementById("toukouContainer");
             if (toukouContainer) {
-                toukouContainer.addEventListener("click", function (e) {
+                toukouContainer.addEventListener("click", function(e) {
                     window.location.href = '{{ route("articles.create") }}';
                 });
             }
 
-            var mypageContainer = document.getElementById("mypageContainer");
-            if (mypageContainer) {
-                mypageContainer.addEventListener("click", function (e) {
-                    // Please sync "profile（たぶんいらない）" to the project
+            // 検索アイコンをクリックしたときの処理
+            var kensakuIcon = document.getElementById("kensakuContainer");
+            if (kensakuIcon) {
+                kensakuIcon.addEventListener("click", function() {
+                    var popup = document.getElementById("searchPopup");
+                    popup.style.display = "flex";
                 });
             }
         });
-
     </script>
     <script src="{{ asset('/js/map.js') }}"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRXSG9YD09Kr9zE8j67ukkgNzpSMW7KKU&callback=initMap" async
