@@ -18,12 +18,12 @@
     cursor: pointer;
 }
 .kensaku-icon {
-    height: 51px;
-    width: 51px;
+    height: 58px;
+    width: 58px;
     position: absolute;
     margin: 0 !important;
-    right: 11px;
-    bottom: 12px;
+    right: 3px;
+    top: 308px;
     cursor: pointer;
     z-index: 1;
 }
