@@ -8,6 +8,7 @@
             <a class="a4">カテゴリの検索</a>
         </div>
         <main class="main-category">
+         <form action="{{ route('search.results') }}" method="GET">
             <!-- ジャンル -->
             <div class="category-section">
                 <div class="category-title">ジャンル</div>
@@ -54,8 +55,12 @@
                     <label><input type="radio" name="feature" value="店員が優しい"> 店員が優しい</label>
                     <label><input type="radio" name="feature" value="料理の提供が早い"> 料理の提供が早い</label>
                     <label><input type="radio" name="feature" value="人が少なく静か"> 人が少なく静か</label>
+                    <button type="submit">検索</button>
                 </div>
             </div>
+            <!-- 検索ボタン -->
+            
+         </form>
         </main>
     </div>
 </x-app-layout>

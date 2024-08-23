@@ -102,6 +102,37 @@ class ArticleController extends Controller
         return view('detail', ['article' => $article]);
     }
 
+    public function search(Request $request)
+    {
+        // フォームからの入力データを取得
+        $genre = $request->input('genre');
+        $ninzu = $request->input('ninzu');
+        $price = $request->input('price');
+        $feature = $request->input('feature');
+
+        // 検索クエリを構築
+        $query = Article::query();
+
+        if ($genre) {
+            $query->where('genre', $genre);
+        }
+        if ($ninzu) {
+            $query->where('ninzu', $ninzu);
+        }
+        if ($price) {
+            $query->where('price', $price);
+        }
+        if ($feature) {
+            $query->where('feature', $feature);
+        }
+
+        // 検索結果を取得
+        $results = $query->get();
+
+        // ビューに結果を渡して表示
+        return view('search.results', compact('results'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      */
