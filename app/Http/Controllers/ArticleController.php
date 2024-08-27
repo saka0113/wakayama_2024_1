@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Article;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Auth;
+
 class ArticleController extends Controller
 {
     /**
@@ -78,6 +80,7 @@ class ArticleController extends Controller
             $file_name = basename($image->store('public'));
 
             Article::create([
+                'user_id' => Auth::id(),
                 'content' => $request->input('content'),
                 'image_path' => $file_name,
                 'city_id' => $city_id,
@@ -155,5 +158,11 @@ class ArticleController extends Controller
     public function destroy(Article $article)
     {
         //
+    }
+
+    public function myPosts()
+    {
+        $articles = Article::where('user_id', Auth::id())->orderBy('updated_at', 'desc')->get();
+        return view('user', compact('articles'));
     }
 }
