@@ -13,11 +13,11 @@
           <a href='{{ route("article.show", ["id" => $article->id]) }}'>
             <img class="square_image" src="{{ asset('storage/' . $article->image_path) }}" alt="Article Image">
           </a>
-          <div class="icon_box ">
-            <img class="icon_size" alt="" src="{{ asset('images/icon.svg') }}">
+          <div class="icon_box">
             <!-- クリック時に'いいね'のカウントが増えるようにする -->
-            <img class="icon_size" alt="" src="{{ asset('images/icon-11.svg') }}">
+            @include('favorite')
             <!-- キープも同様 -->
+            <img class="icon_size" alt="" src="{{ asset('images/icon.svg') }}">
           </div>
         </div>
       @endforeach

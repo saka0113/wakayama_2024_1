@@ -36,12 +36,8 @@
                 <div>{{$article->content}}</div>
               </div>
             </div>
-            <img
-              class="iine-icon"
-              loading="lazy"
-              alt="Like icon"
-              src="{{ asset('images/iine.svg') }}"
-            />
+            <!-- クリック時に'いいね'のカウントが増えるようにする -->
+            @include('favorite')
 
             <img
               class="share-icon"
