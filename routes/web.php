@@ -33,6 +33,8 @@ Route::get('/home', function () {
 Route::get('/list/{id}', [ArticleController::class, 'index'])->name('article.list');
 Route::post('/list/store', [ArticleController::class, 'store'])->name('article.store');
 
+Route::post('/comment/store', [ArticleController::class, 'store'])->name('comment.store');
+
 Route::get('/create', [ArticleController::class, 'create'])->name('article.create');
 
 Route::get('/detail/{id}', [ArticleController::class, 'show'])->name('article.show');
