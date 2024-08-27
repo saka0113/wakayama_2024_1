@@ -9,19 +9,18 @@
     <h1>{{ $message }}</h1>
     <div class="square_contents">
       @foreach ($articles as $article)
-      <div class="square_content">
-      <a href='{{ route("article.show", ["id" => $article->id]) }}'>
-        <img class="square_image" src="{{ asset('storage/' . $article->image_path) }}" alt="Article Image">
-      </a>
-      <div class="icon_box ">
-        <img class="icon_size" alt="" src="{{ asset('images/icon.svg') }}">
-        <!-- クリック時に'いいね'のカウントが増えるようにする -->
-        <img class="icon_size" alt="" src="{{ asset('images/icon-11.svg') }}">
-        <!-- キープも同様 -->
-        <button class="comment_button" data-article-id="{{ $article->id }}">コメント</button>
-      </div>
-      </div>
-    @endforeach
+        <div class="square_content">
+          <a href='{{ route("article.show", ["id" => $article->id]) }}'>
+            <img class="square_image" src="{{ asset('storage/' . $article->image_path) }}" alt="Article Image">
+          </a>
+          <div class="icon_box">
+            <!-- クリック時に'いいね'のカウントが増えるようにする -->
+            @include('favorite')
+            <!-- キープも同様 -->
+            <img class="icon_size" alt="" src="{{ asset('images/icon.svg') }}">
+          </div>
+        </div>
+      @endforeach
     </div>
   </div>
 

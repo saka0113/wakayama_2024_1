@@ -19,4 +19,9 @@ class Article extends Model
         "feature",
         'comment',
     ];
+
+    public function favorite_users()
+    {
+        return $this->belongsToMany(User::class,'favorites','article_id','user_id')->withTimestamps();
+    }
 }
