@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\FavoriteController;
+
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
@@ -62,6 +64,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/post/{id}', [PostController::class, 'destroy'])->name('post.destroy');
 
     Route::get('/myposts', [PostController::class, 'myPosts'])->name('myposts');
+
+    Route::post('/article/{id}/favorite', [FavoriteController::class, 'store'])->name('favorites.favorite');
+    Route::delete('/article/{id}/unfavorite',[FavoriteController::class, 'destroy'])->name('favorites.unfavorite');
 });
 
 require __DIR__ . '/auth.php';
