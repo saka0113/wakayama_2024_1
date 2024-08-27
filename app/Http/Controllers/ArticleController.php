@@ -165,4 +165,10 @@ class ArticleController extends Controller
         $articles = Article::where('user_id', Auth::id())->orderBy('updated_at', 'desc')->get();
         return view('user', compact('articles'));
     }
+
+    public function showmap()
+    {
+    $articles = Article::all(); // 必要なデータを取得
+    return response()->json($articles); // JSONレスポンスを返す
+    }
 }
