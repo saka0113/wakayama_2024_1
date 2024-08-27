@@ -31,6 +31,8 @@
                 </header>
             @endif
 
+            @include('layouts.navigation')
+
             @if (session('success'))
             <div class="bg-green-300 border p-4 font-semibold text-center">
                 {{ session('success') }}
