@@ -22,6 +22,8 @@ Route::get('/', function () {
     return view('top');
 })->name('top');
 
+Route::get('/articles', [ArticleController::class, 'showmap']);
+
 Route::get('/category', function () {
     return view('category');
 })->name('category');
