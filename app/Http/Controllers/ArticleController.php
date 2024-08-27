@@ -156,4 +156,9 @@ class ArticleController extends Controller
     {
         //
     }
+    public function showmap()
+{
+    $articles = Article::all(); // 必要なデータを取得
+    return response()->json($articles); // JSONレスポンスを返す
+}
 }
