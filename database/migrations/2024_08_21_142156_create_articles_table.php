@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('ninzu')->nullable();
             $table->string('price')->nullable();
             $table->string('feature')->nullable();
+            $table->string('comment')->nullable();
             $table->timestamps();
         });
     }

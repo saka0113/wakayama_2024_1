@@ -5,6 +5,7 @@ use App\Http\Controllers\FavoriteController;
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\CommentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,6 +35,13 @@ Route::get('/home', function () {
 
 Route::get('/list/{id}', [ArticleController::class, 'index'])->name('article.list');
 Route::post('/list/store', [ArticleController::class, 'store'])->name('article.store');
+
+
+Route::post('/comment/store', [CommentController::class, 'store'])->name('comment.store');//いらないかも？後で検証
+
+Route::get('/create', [ArticleController::class, 'create'])->name('article.create');
+
+
 
 Route::get('/detail/{id}', [ArticleController::class, 'show'])->name('article.show');
 
