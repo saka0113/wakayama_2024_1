@@ -9,7 +9,7 @@
   <div class="proflie">
     <div class="mypage_line">
       <a class="circle">image</a>
-      <p class="fontbigger">Relic太郎</p>
+      <p class="fontbigger">{{ Auth::user()->name }}</p>
     </div>
     <ul class="tab-group">
       @foreach (range(1, 2) as $i)
