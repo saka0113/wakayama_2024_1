@@ -100,7 +100,8 @@ class ArticleController extends Controller
      */
     public function show($id, Article $article)
     {
-        $article = Article::find($id);
+        $article = Article::with('comments')->find($id);
+        
         return view('detail', ['article' => $article]);
     }
 

@@ -18,6 +18,8 @@
             @include('favorite')
             <!-- キープも同様 -->
             <img class="icon_size" alt="" src="{{ asset('images/icon.svg') }}">
+            <!-- コメントボタンを追加 -->
+            @include('comment')
           </div>
         </div>
       @endforeach
@@ -29,8 +31,8 @@
     <div class="popup-content">
       <form id="commentForm" action="{{ route('comment.store') }}" method="POST">
         @csrf
-        <textarea name="comment" placeholder="コメントを入力してください"></textarea>
-        <input type="hidden" name="article_id" id="articleId">
+        <textarea name="content" placeholder="コメントを入力してください"></textarea>
+        <input type="hidden" name="article_id" id="articleId" value="{{ $article->id }}">
         <button type="submit">送信</button>
       </form>
     </div>
