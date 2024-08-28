@@ -26,6 +26,15 @@
                 <div class="div">投稿</div>
             </div>
         </section>
+        <section class="content1">
+            <div class="mypage" id="mypageContainer">
+                <div class="profile-picture"></div>
+                <img class="profile-icon" loading="lazy" alt="" src="{{ asset('images/vector.svg') }}" />
+                <div class="my-page-label">
+                    <div class="div1">マイページ</div>
+                </div>
+            </div>
+        </section>
         <section class="content">
             <div class="toukou" id="kensakuContainer">
                 <div class="toukou-child"></div>
@@ -58,6 +67,14 @@
             if (toukouContainer) {
                 toukouContainer.addEventListener("click", function(e) {
                     window.location.href = '{{ route("article.create") }}';
+                });
+            }
+
+            // 投稿ボタンをクリックしたときの処理
+            var toukouContainer = document.getElementById("mypageContainer");
+            if (toukouContainer) {
+                toukouContainer.addEventListener("click", function (e) {
+                    window.location.href = '{{ route("user") }}';
                 });
             }
 

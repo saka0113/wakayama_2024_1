@@ -12,6 +12,7 @@ class Article extends Model
     use HasFactory;
 
     protected $fillable = [
+        "user_id",
         "content",
         "image_path",
         "city_id",

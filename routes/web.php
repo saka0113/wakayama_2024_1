@@ -36,15 +36,14 @@ Route::get('/home', function () {
 Route::get('/list/{id}', [ArticleController::class, 'index'])->name('article.list');
 Route::post('/list/store', [ArticleController::class, 'store'])->name('article.store');
 
+
 Route::post('/comment/store', [CommentController::class, 'store'])->name('comment.store');//いらないかも？後で検証
 
 Route::get('/create', [ArticleController::class, 'create'])->name('article.create');
 
-Route::get('/detail/{id}', [ArticleController::class, 'show'])->name('article.show');
 
-Route::get('/user', function () {
-    return view('user');
-})->name('user');
+
+Route::get('/detail/{id}', [ArticleController::class, 'show'])->name('article.show');
 
 Route::get('/search', function () {
     return view('search');
@@ -70,8 +69,12 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/myposts', [PostController::class, 'myPosts'])->name('myposts');
 
+    Route::get('/create', [ArticleController::class, 'create'])->name('article.create');
+
     Route::post('/article/{id}/favorite', [FavoriteController::class, 'store'])->name('favorites.favorite');
     Route::delete('/article/{id}/unfavorite',[FavoriteController::class, 'destroy'])->name('favorites.unfavorite');
+
+    Route::get('/user', [ArticleController::class, 'myPosts'])->name('user');
 });
 
 require __DIR__ . '/auth.php';
