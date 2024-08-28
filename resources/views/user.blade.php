@@ -75,11 +75,13 @@
         </div>
       </div>
       <div class="square_contents">
-      @foreach ($articles as $article)
-      <div class="square_content">
-        <a href="{{ asset('storage/' . $article->image_path) }}"><img class="square_image" src="{{ asset('storage/' . $article->image_path) }}" alt="Article Image"></a>
-      </div>
-      @endforeach
+      @if ($articles->isNotEmpty())
+        @foreach ($articles as $article)
+        <div class="square_content">
+          <a href="{{ asset('storage/' . $article->image_path) }}"><img class="square_image" src="{{ asset('storage/' . $article->image_path) }}" alt="Article Image"></a>
+        </div>
+        @endforeach
+      @endif
     </div>
 
 
