@@ -15,7 +15,7 @@
         <section class="location">
             <div id="map" class="map-style"></div>
             <div id="location-info"></div>
-                <img class="kensaku-icon" loading="lazy" alt="" src="{{ asset('images/kensaku.svg') }}" id="kensaku" />
+            <img class="kensaku-icon" loading="lazy" alt="" src="{{ asset('images/kensaku.svg') }}" id="kensaku" />
         </section>
         <section class="content">
             <div class="toukou" id="toukouContainer">
@@ -61,7 +61,7 @@
                     window.location.href = "{{ url('list') }}";
                 });
             }
-            
+
             // 投稿ボタンをクリックしたときの処理
             var toukouContainer = document.getElementById("toukouContainer");
             if (toukouContainer) {
@@ -73,8 +73,8 @@
             // 投稿ボタンをクリックしたときの処理
             var toukouContainer = document.getElementById("mypageContainer");
             if (toukouContainer) {
-                toukouContainer.addEventListener("click", function (e) {
-                    window.location.href = '{{ route("user") }}';
+                toukouContainer.addEventListener("click", function(e) {
+                    window.location.href = '{{ url("user/1") }}';
                 });
             }
 

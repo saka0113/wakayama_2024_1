@@ -22,8 +22,6 @@ Route::get('/', function () {
     return view('top');
 })->name('top');
 
-Route::get('/articles', [ArticleController::class, 'showmap']);
-
 Route::get('/category', function () {
     return view('category');
 })->name('category');
@@ -64,9 +62,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/create', [ArticleController::class, 'create'])->name('article.create');
 
     Route::post('/article/{id}/favorite', [FavoriteController::class, 'store'])->name('favorites.favorite');
-    Route::delete('/article/{id}/unfavorite',[FavoriteController::class, 'destroy'])->name('favorites.unfavorite');
+    Route::delete('/article/{id}/unfavorite', [FavoriteController::class, 'destroy'])->name('favorites.unfavorite');
 
-    Route::get('/user', [ArticleController::class, 'myPosts'])->name('user');
+    Route::get('/user/{tabindex}', [ArticleController::class, 'myArticles'])->where('tabindex', '[1-3]')->name('user');
 });
 
 require __DIR__ . '/auth.php';
