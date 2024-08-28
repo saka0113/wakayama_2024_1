@@ -26,7 +26,7 @@
               <div class="comment-header">
                 <div class="icon1" id="icon"></div>
                 <div class="user-name">
-                  <div class="relic">Relic太郎</div>
+                  <div class="relic">{{ $article->user->name }}</div>
                 </div>
               </div>
               <div>{{$article->content}}</div>
