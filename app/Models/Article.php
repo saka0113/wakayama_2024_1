@@ -23,6 +23,11 @@ class Article extends Model
         'comment',
     ];
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
     public function favorite_users()
     {
         return $this->belongsToMany(User::class, 'favorites', 'article_id', 'user_id')->withTimestamps();
