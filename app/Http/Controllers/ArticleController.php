@@ -163,15 +163,20 @@ class ArticleController extends Controller
         //
     }
 
-    public function myPosts()
+    public function myArticles($tabindex = '1')
     {
-        $articles = Article::where('user_id', Auth::id())->orderBy('updated_at', 'desc')->get();
-        return view('user', compact('articles'));
+        $articles = match ($tabindex) {
+            '1' => Article::where('user_id', Auth::id())->orderBy('updated_at', 'desc')->get(),
+            '2' => Auth::user()->favorites()->orderBy('updated_at', 'desc')->get(),
+            default => 'unknown status code',
+        };
+
+        return view('user', compact('articles', 'tabindex'));
     }
 
     public function showmap()
     {
-    $articles = Article::all(); // 必要なデータを取得
-    return response()->json($articles); // JSONレスポンスを返す
+        $articles = Article::all(); // 必要なデータを取得
+        return response()->json($articles); // JSONレスポンスを返す
     }
 }

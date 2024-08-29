@@ -23,8 +23,6 @@ Route::get('/', function () {
     return view('top');
 })->name('top');
 
-Route::get('/articles', [ArticleController::class, 'showmap']);
-
 Route::get('/category', function () {
     return view('category');
 })->name('category');
@@ -36,12 +34,9 @@ Route::get('/home', function () {
 Route::get('/list/{id}', [ArticleController::class, 'index'])->name('article.list');
 Route::post('/list/store', [ArticleController::class, 'store'])->name('article.store');
 
-
 Route::post('/comment/store', [CommentController::class, 'store'])->name('comment.store');//いらないかも？後で検証
 
 Route::get('/create', [ArticleController::class, 'create'])->name('article.create');
-
-
 
 Route::get('/detail/{id}', [ArticleController::class, 'show'])->name('article.show');
 
@@ -54,6 +49,8 @@ Route::get('/place', function () {
 })->name('place');
 
 Route::get('/search/results', [ArticleController::class, 'search'])->name('search.results');
+
+Route::get('/articles', [ArticleController::class, 'showmap']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -72,9 +69,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/create', [ArticleController::class, 'create'])->name('article.create');
 
     Route::post('/article/{id}/favorite', [FavoriteController::class, 'store'])->name('favorites.favorite');
-    Route::delete('/article/{id}/unfavorite',[FavoriteController::class, 'destroy'])->name('favorites.unfavorite');
+    Route::delete('/article/{id}/unfavorite', [FavoriteController::class, 'destroy'])->name('favorites.unfavorite');
 
-    Route::get('/user', [ArticleController::class, 'myPosts'])->name('user');
+    Route::get('/user/{tabindex}', [ArticleController::class, 'myArticles'])->where('tabindex', '[1-3]')->name('user');
 });
 
 require __DIR__ . '/auth.php';
