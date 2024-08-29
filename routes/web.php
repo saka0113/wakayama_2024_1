@@ -34,12 +34,9 @@ Route::get('/home', function () {
 Route::get('/list/{id}', [ArticleController::class, 'index'])->name('article.list');
 Route::post('/list/store', [ArticleController::class, 'store'])->name('article.store');
 
-
 Route::post('/comment/store', [CommentController::class, 'store'])->name('comment.store');//いらないかも？後で検証
 
 Route::get('/create', [ArticleController::class, 'create'])->name('article.create');
-
-
 
 Route::get('/detail/{id}', [ArticleController::class, 'show'])->name('article.show');
 
@@ -52,6 +49,8 @@ Route::get('/place', function () {
 })->name('place');
 
 Route::get('/search/results', [ArticleController::class, 'search'])->name('search.results');
+
+Route::get('/articles', [ArticleController::class, 'showmap']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

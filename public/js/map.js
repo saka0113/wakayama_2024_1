@@ -78,99 +78,95 @@ function initMap() {
     });
     // 既存の投稿データからマーカーを配置
     fetch('/articles')
-    .then(response => response.json())
-    .then(data => {
-        console.log('Success:');
-        data.forEach(article => {
-            const location = cityLocations[article.city_id];
-            if (location) {
-                const latLng = new google.maps.LatLng(location.lat, location.lng);
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:');
+            data.forEach(article => {
+                const location = cityLocations[article.city_id];
+                if (location) {
+                    const latLng = new google.maps.LatLng(location.lat, location.lng);
 
-                const marker = new google.maps.Marker({
-                    position: latLng,
-                    map: map,
-                    icon: {
-                        url: '/storage/' + article.image_path,
-                        scaledSize: new google.maps.Size(50, 50),
-                        origin: new google.maps.Point(0, 0),
-                        anchor: new google.maps.Point(25, 25)
-                    }
-                });
+                    const marker = new google.maps.Marker({
+                        position: latLng,
+                        map: map,
+                        icon: {
+                            url: '/storage/' + article.image_path,
+                            scaledSize: new google.maps.Size(50, 50),
+                            origin: new google.maps.Point(0, 0),
+                            anchor: new google.maps.Point(25, 25)
+                        }
+                    });
 
-                const infoWindow = new google.maps.InfoWindow({
-                    content: `<div><img src="/storage/${article.image_path}" style="width:100px;height:100px;"><p>${article.content}</p></div>`
-                });
+                    const infoWindow = new google.maps.InfoWindow({
+                        content: `<div><img src="/storage/${article.image_path}" style="width:100px;height:100px;"><p>${article.content}</p></div>`
+                    });
 
-                marker.addListener('click', () => {
-                    infoWindow.open(map, marker);
-                });
-            }
-        });
-    })
-    .catch(error => console.error('Error fetching articles:', error));
+                    marker.addListener('click', () => {
+                        infoWindow.open(map, marker);
+                    });
+                }
+            });
+        })
+        .catch(error => console.error('Error fetching articles:', error));
 
 }
-    // グローバルなmap変数にアクセスできるようにする
-    window.map = map;
-    
+// グローバルなmap変数にアクセスできるようにする
+window.map = map;
 
-    function getAddress(latLng) {
-        const geocoder = new google.maps.Geocoder();
-        geocoder.geocode({ location: latLng }, (results, status) => {
-            if (status === "OK" && results[0]) {
-                const cityInfo = results[0].address_components.find(component => component.types.includes("locality"));
-                const municipality = cityInfo ? cityInfo.long_name : "市町村情報が見つかりませんでした。";
-                document.getElementById("location-info").innerText = "市町村: " + municipality;
 
-                if (municipality) {
-                    const cityIdMap = {
-                        "和歌山市": 1,
-                        "海南市": 2,
-                        "紀の川市": 3,
-                        "岩出市": 4,
-                        "橋本市": 5,
-                        "かつらぎ町": 6,
-                        "九度山町": 7,
-                        "高野町": 8,
-                        "紀美野町": 9,
-                        "有田市": 10,
-                        "御坊市": 11,
-                        "田辺市": 12,
-                        "有田川町": 13,
-                        "湯浅町": 14,
-                        "広川町": 15,
-                        "由良町": 16,
-                        "日高町": 17,
-                        "美浜町": 18,
-                        "日高川町": 19,
-                        "印南町": 20,
-                        "みなべ町": 21,
-                        "上富田町": 22,
-                        "白浜町": 23,
-                        "すさみ町": 24,
-                        "新宮市": 25,
-                        "古座川町": 26,
-                        "串本町": 27,
-                        "那智勝浦町": 28,
-                        "太地町": 29,
-                        "北山村": 30
-                    };
+function getAddress(latLng) {
+    const geocoder = new google.maps.Geocoder();
+    geocoder.geocode({ location: latLng }, (results, status) => {
+        if (status === "OK" && results[0]) {
+            const cityInfo = results[0].address_components.find(component => component.types.includes("locality"));
+            const municipality = cityInfo ? cityInfo.long_name : "市町村情報が見つかりませんでした。";
+            document.getElementById("location-info").innerText = "市町村: " + municipality;
 
-                    const cityId = cityIdMap[municipality];
+            if (municipality) {
+                const cityIdMap = {
+                    "和歌山市": 1,
+                    "海南市": 2,
+                    "紀の川市": 3,
+                    "岩出市": 4,
+                    "橋本市": 5,
+                    "かつらぎ町": 6,
+                    "九度山町": 7,
+                    "高野町": 8,
+                    "紀美野町": 9,
+                    "有田市": 10,
+                    "御坊市": 11,
+                    "田辺市": 12,
+                    "有田川町": 13,
+                    "湯浅町": 14,
+                    "広川町": 15,
+                    "由良町": 16,
+                    "日高町": 17,
+                    "美浜町": 18,
+                    "日高川町": 19,
+                    "印南町": 20,
+                    "みなべ町": 21,
+                    "上富田町": 22,
+                    "白浜町": 23,
+                    "すさみ町": 24,
+                    "新宮市": 25,
+                    "古座川町": 26,
+                    "串本町": 27,
+                    "那智勝浦町": 28,
+                    "太地町": 29,
+                    "北山村": 30
+                };
 
-                    if (cityId) {
-                        // IDが取得できたらリダイレクト
+                const cityId = cityIdMap[municipality];
+
+                if (cityId) {
+                    // IDが取得できたらリダイレクト
                     window.location.href = `/list/${cityId}`;
-                    } else {
-                        document.getElementById("location-info").innerText = "市町村が見つかりませんでした。";
-                    }
+                } else {
+                    document.getElementById("location-info").innerText = "市町村が見つかりませんでした。";
                 }
-            } else {
-                document.getElementById("location-info").innerText = "位置情報の取得に失敗しました。";
             }
-        });
-
-        
-
-        
+        } else {
+            document.getElementById("location-info").innerText = "位置情報の取得に失敗しました。";
+        }
+    });
 }

@@ -173,4 +173,10 @@ class ArticleController extends Controller
 
         return view('user', compact('articles', 'tabindex'));
     }
+
+    public function showmap()
+    {
+        $articles = Article::all(); // 必要なデータを取得
+        return response()->json($articles); // JSONレスポンスを返す
+    }
 }
