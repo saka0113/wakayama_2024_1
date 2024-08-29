@@ -219,4 +219,37 @@
     line-height: normal;
     letter-spacing: normal;
   }
+  .comments-section {
+    background-color: #fff4e5;
+    border: 1px solid #ffa500;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.comments-section h3 {
+    color: #ff4500;
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.comment {
+    background-color: #ffe4b5;
+    border: 1px solid #ff8c00;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.comment p {
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+}
+
+.comment strong {
+    color: #ff4500;
+    font-weight: bold;
+}
   

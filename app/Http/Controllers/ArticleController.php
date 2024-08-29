@@ -73,6 +73,7 @@ class ArticleController extends Controller
             'ninzu' => 'nullable|string',
             'price' => 'nullable|string',
             'feature' => 'nullable|string',
+            'comment' => 'nullable|string|max:255',
         ]);
 
         if ($image = $request->file('image')) {
@@ -88,6 +89,7 @@ class ArticleController extends Controller
                 'ninzu' => $request->input('ninzu'),
                 'price' => $request->input('price'),
                 'feature' => $request->input('feature'),
+                'comment' => $request['comment'],
             ]);
 
             return redirect()->route('article.list', ["id" => $city_id])->with('success', 'Article created successfully!');
@@ -101,7 +103,8 @@ class ArticleController extends Controller
      */
     public function show($id, Article $article)
     {
-        $article = Article::find($id);
+        $article = Article::with('comments')->find($id);
+        
         return view('detail', ['article' => $article]);
     }
 

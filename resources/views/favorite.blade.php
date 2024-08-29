@@ -1,5 +1,5 @@
 <div style="display: flex;">
-    @if (Auth::user()->is_favorite($article->id))
+    @if (Auth::check() && Auth::user()->is_favorite($article->id))
         <form id="unfavorite-form-{{ $article->id }}" action="{{ route('favorites.unfavorite', $article->id) }}" method="POST" style="display: none;">
             @csrf
             @method('DELETE')

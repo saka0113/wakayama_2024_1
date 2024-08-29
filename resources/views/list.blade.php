@@ -1,6 +1,6 @@
 <x-app-layout>
   @push('styles')
-  <link rel="stylesheet" href="{{ asset('css/list.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/list.css') }}">
   @endpush
 
   <x-slot name="header"></x-slot>
@@ -18,9 +18,24 @@
             @include('favorite')
             <!-- キープも同様 -->
             <img class="icon_size" alt="" src="{{ asset('images/icon.svg') }}">
+            <!-- コメントボタンを追加 -->
+            @include('comment')
           </div>
         </div>
       @endforeach
     </div>
   </div>
+
+  <!-- コメントのポップアップ -->
+  <div id="commentPopup" class="popup-overlay" style="display:none;">
+    <div class="popup-content">
+      <form id="commentForm" action="{{ route('comment.store') }}" method="POST">
+        @csrf
+        <textarea name="content" placeholder="コメントを入力してください"></textarea>
+        <input type="hidden" name="article_id" id="articleId" value="{{ $article->id }}">
+        <button type="submit">送信</button>
+      </form>
+    </div>
+  </div>
+  <script src="{{ asset('js/comment.js') }}"></script>
 </x-app-layout>
